@@ -1,14 +1,18 @@
 # NLI Comparison on IndicXNLI (Hindi)
 
-Compares three models on the **IndicXNLI Hindi** Natural Language Inference dataset:
-
-| Model | Type |
-|---|---|
-| Logistic Regression (TF-IDF) | Classical baseline |
-| Support Vector Machine (TF-IDF) | Classical baseline |
-| XLM-RoBERTa (`joeddav/xlm-roberta-large-xnli`) | Transformer |
+Compares three models on the **IndicXNLI Hindi** Natural Language Inference dataset.
 
 **Task:** Given a premise and hypothesis in Hindi, classify the relationship as `Entailment`, `Neutral`, or `Contradiction`.
+
+## Results
+
+| Model | Accuracy | Macro F1 | Type |
+|---|---|---|---|
+| **XLM-RoBERTa** (`joeddav/xlm-roberta-large-xnli`) | **0.9699** | **0.9699** | Transformer (pre-trained on XNLI-15 languages) |
+| Logistic Regression (TF-IDF) | 0.4846 | 0.4831 | Classical — trained on IndicXNLI train set |
+| Linear SVM (TF-IDF) | 0.4603 | 0.4589 | Classical — trained on IndicXNLI train set |
+
+**Dataset split sizes:** Train: 117,811 | Dev: 2,490 | Test: 5,010 (balanced, 1,670 per class)
 
 ---
 
